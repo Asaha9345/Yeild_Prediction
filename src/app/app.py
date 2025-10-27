@@ -85,7 +85,7 @@ class YieldPredictionApp:
 
         # AOI as hollow polygons
         outline_style = {
-            'color': 'yellow',
+            'color': 'black',
             'fillColor': '00000000',  # transparent
             'width': 2
         }
@@ -101,7 +101,7 @@ class YieldPredictionApp:
             html = f"""
             <div style="
                 font-size: 12px;
-                color: #00ff00;
+                color: #000000;
                 font-weight: bold;
                 text-shadow: 1px 1px 2px black;
                 white-space: nowrap;
