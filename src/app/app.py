@@ -196,7 +196,7 @@ class YieldPredictionApp:
         self.sidebar()
 
         st.markdown("---")
-        st.caption("Made by Prajukta Research")
+        st.caption("Made by Prajukti Research")
 
 
 # if __name__ == "__main__":
