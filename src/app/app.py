@@ -67,8 +67,16 @@ class YieldPredictionApp:
         predict_class = Prediction(shapefile_subset, r"model/gee_yield_model.pkl")
         predicted_shapefile = predict_class.make_prediction(self.year)
 
-        # Convert to EE FeatureCollection
-        aoi = ee.FeatureCollection(json.loads(predicted_shapefile.to_json()))
+        if predicted_shapefile.empty:
+            st.error("No features found in selected district.")
+            st.stop()
+        predicted_shapefile = predicted_shapefile.to_crs(epsg=4326)
+        predicted_shapefile["geometry"] = predicted_shapefile.buffer(0)
+        try:
+            aoi = geemap.geopandas_to_ee(predicted_shapefile)
+        except Exception as e:
+            st.error(f"Error converting shapefile to EE: {e}")
+            st.stop()
 
         # Create the map
         Map = geemap.Map()
