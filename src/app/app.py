@@ -8,6 +8,7 @@ from auth.authenticate import initialize_gee
 from shapely.geometry import Point
 import folium
 import plotly.graph_objects as go
+import os
 
 class YieldPredictionApp:
     """Streamlit app for district-wise kharif paddy yield prediction."""
@@ -19,7 +20,7 @@ class YieldPredictionApp:
             page_icon="🌾",
             layout="wide"
         )
-        self.data_path = r"data/wb_district_boundary.shp"
+        self.data_path = os.path.join("data","wb_district_boundary.shp")
         self.shapefile = None
         self.state = None
         self.selected_districts = []
