@@ -19,7 +19,7 @@ class YieldPredictionApp:
             page_icon="🌾",
             layout="wide"
         )
-        self.data_path = r"data\wb_district_boundary.shp"
+        self.data_path = r"data/wb_district_boundary.shp"
         self.shapefile = None
         self.state = None
         self.selected_districts = []
