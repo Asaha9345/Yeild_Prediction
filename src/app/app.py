@@ -20,7 +20,7 @@ class YieldPredictionApp:
             page_icon="🌾",
             layout="wide"
         )
-        self.data_path = "https://drive.google.com/file/d/1QKRfJ_JfnDMILRVxG0BbhVvJ7H7CxPwr/view?usp=sharing"
+        self.data_path = "https://raw.githubusercontent.com/Asaha9345/Yeild_Prediction/main/src/data/wb_geojson.geojson"
         self.shapefile = None
         self.state = None
         self.selected_districts = []
