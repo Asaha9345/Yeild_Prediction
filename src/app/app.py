@@ -20,7 +20,7 @@ class YieldPredictionApp:
             page_icon="🌾",
             layout="wide"
         )
-        self.data_path = os.path.join("data","wb_district_boundary.shp")
+        self.data_path = "https://github.com/Asaha9345/Yeild_Prediction/blob/main/src/data/wb_geojson.geojson"
         self.shapefile = None
         self.state = None
         self.selected_districts = []
