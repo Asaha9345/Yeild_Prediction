@@ -8,8 +8,12 @@ from data_collection.data_collection import DataCollection
 
 class Prediction:
 
-    def __init__(self, aoi:gpd.GeoDataFrame , model_path):
-        self.model = joblib.load(model_path)
+    def __init__(self, aoi:gpd.GeoDataFrame , model_path: str):
+        base_dir = os.path.dirname(os.path.dirname(__file__))
+        model_full_path = os.path.join(base_dir, model_path)
+        if not os.path.exists(model_full_path):
+            raise FileNotFoundError(f"Model not found at {model_full_path}")
+        self.model = joblib.load(model_full_path)
         self.aoi = aoi
 
     def make_prediction(self, year):
