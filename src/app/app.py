@@ -82,7 +82,6 @@ class YieldPredictionApp:
 
         # Create the map
         Map = geemap.Map()
-        Map.add_basemap("HYBRID")
 
         # AOI as hollow polygons
         outline_style = {
