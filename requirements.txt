@@ -9,3 +9,7 @@ geemap
 numpy
 folium
 plotly
+geemap==0.30.4
+folium==0.15.1
+xyzservices==2023.10.1
+box==0.1.5
